@@ -1,0 +1,86 @@
+﻿<Fluent:RibbonWindow x:Class="Employees.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Employees"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        mc:Ignorable="d"
+        Title="EmployeesManagement" Height="450" Width="800"
+                     Loaded="RibbonWindow_Loaded">
+    <Window.Resources>
+        <local:RelativeToAbsoluteConverter x:Key="RelativeConverter"></local:RelativeToAbsoluteConverter>
+        
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Fluent:Ribbon Grid.Row="0">
+            <Fluent:RibbonTabItem Name="tbItemHome"  Header="Home" FontWeight="Bold" MouseDoubleClick="tbItemHome_MouseDoubleClick" IsOpen="True">
+                <Fluent:RibbonGroupBox Name="gbxAction" Header="" State="Large">
+                    <Fluent:Button Name="btnAdd" Header="Add" Icon="/Images/add.png" Click="btnAdd_Click" Padding="5" >
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="Images/add.png" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Name="btnDelete" Header="Delete" Icon="/Images/delete.png" Click="btnDelete_Click" Padding="5">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="Images/delete.png" RenderOptions.BitmapScalingMode="HighQuality"></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                    <Fluent:Button Name="btnUpdate" Header="Update" Icon="/Images/update.png" Padding="5">
+                        <Fluent:Button.LargeIcon>
+                            <Image Source="Images/updated.png" RenderOptions.BitmapScalingMode="HighQuality" ></Image>
+                        </Fluent:Button.LargeIcon>
+                    </Fluent:Button>
+                </Fluent:RibbonGroupBox>
+            </Fluent:RibbonTabItem>
+        </Fluent:Ribbon>
+        <ListView x:Name="lsvEmployee" 
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                    Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" MinWidth="815" HorizontalContentAlignment="Center">
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <Border Background="White"  Height="150" MinWidth="800" BorderBrush="AliceBlue"  CornerRadius="5">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Width="150" Height="150" Source="{Binding Avatar,Converter={StaticResource RelativeConverter}}" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,20,0"></Image>
+                            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <TextBlock Text="{Binding FullName}" TextWrapping="Wrap" Width="150" FontFamily="Tahoma"
+                                        FontStretch="UltraExpanded" FontSize="15" HorizontalAlignment="Left" Margin="50,5,0,5" Foreground="CornflowerBlue"></TextBlock>
+                                <TextBlock Name="txbEmail" Text="{Binding Email}" FontWeight="Bold"></TextBlock>
+                                <TextBlock Name="txbAddress" Text="{Binding Address}" FontWeight="Bold"></TextBlock>
+                                <TextBlock Name="txbPhoneNumber" Text="{Binding PhoneNumber}" FontWeight="Bold"></TextBlock>
+                            </StackPanel>
+                            <StackPanel.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem Header="Delete" Click="deleteMenu_Click"></MenuItem>
+                                </ContextMenu>
+                            </StackPanel.ContextMenu>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical"></WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.Resources>
+                <ContextMenu x:Key="ctxmDeleteBook">
+                    <MenuItem Header="Delete" Click="deleteMenu_Click"></MenuItem>
+                </ContextMenu>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="ContextMenu" Value="{StaticResource ctxmDeleteBook}"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+    </Grid>
+</Fluent:RibbonWindow>

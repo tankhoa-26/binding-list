@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Books", "BindingList\Books.csproj", "{2E137639-15C6-4216-87AE-D38E3BEC1B37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhones", "MobilePhones\MobilePhones.csproj", "{A260AB98-7591-4DC3-961A-A99DA579457B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "Employees\Employees.csproj", "{D1BFE4B1-236F-4F46-84CE-A94C0436F239}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E137639-15C6-4216-87AE-D38E3BEC1B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E137639-15C6-4216-87AE-D38E3BEC1B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E137639-15C6-4216-87AE-D38E3BEC1B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E137639-15C6-4216-87AE-D38E3BEC1B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A260AB98-7591-4DC3-961A-A99DA579457B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A260AB98-7591-4DC3-961A-A99DA579457B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A260AB98-7591-4DC3-961A-A99DA579457B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A260AB98-7591-4DC3-961A-A99DA579457B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1BFE4B1-236F-4F46-84CE-A94C0436F239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1BFE4B1-236F-4F46-84CE-A94C0436F239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1BFE4B1-236F-4F46-84CE-A94C0436F239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1BFE4B1-236F-4F46-84CE-A94C0436F239}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD796937-E438-4ACA-B7C6-E52C7894C6E3}
+	EndGlobalSection
+EndGlobal
